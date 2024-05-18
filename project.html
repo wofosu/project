@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALP Image Data Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header, footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background: #f4f4f4;
+            padding: 10px;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        section {
+            margin: 20px 0;
+        }
+        .highlight {
+            background: #ffd700;
+            padding: 5px;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .hidden {
+            display: none;
+        }
+        .bookmark {
+            float: right;
+            cursor: pointer;
+        }
+        .sort-buttons, .category-buttons {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .sort-buttons button, .category-buttons button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Finding Image Data within the PALP Website</h1>
+        <p>Categorized items with respective links (Still a work in progress)</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#people">People</a></li>
+            <li><a href="#animals">Animals</a></li>
+            <li><a href="#gods">Gods</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <input type="text" id="searchInput" placeholder="Search for items...">
+        
+        <div class="category-buttons">
+            <button onclick="filterCategory('people')">People</button>
+            <button onclick="filterCategory('animals')">Animals</button>
+            <button onclick="filterCategory('gods')">Gods</button>
+            <button onclick="filterCategory('all')">All</button>
+        </div>
+        
+        <div class="sort-buttons">
+            <button onclick="sortItems('alphabetical')">Sort Alphabetically</button>
+            <button onclick="sortItems('images')">Sort by Image Count</button>
+        </div>
+        
+        <section id="people" class="category-section">
+            <h2>People</h2>
+            <ul class="item-list">
+                <li><a href="https://palp.art/browse/bacchante">bacchante (32)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/mars">mars (31)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/paris">paris (28)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/perseus">perseus (28)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/andromeda">andromeda (25)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/achilles">achilles (22)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/theseus">theseus (22)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/narcissus">narcissus (19)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/priapus">priapus (19)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/helen">helen (17)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/poet">poet (17)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/soldier">soldier (17)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/adonis">adonis (16)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/athena">athena (15)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/endymion">endymion (15)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/selene">selene (15)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/eros">eros (14)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/erotic_scene">erotic_scene (14)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/actor">actor (13)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/gladiator">gladiator (12)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/daedalus">daedalus (11)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/marsyas">marsyas (11)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/hermaphrodite">hermaphrodite (10)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/amazon">amazon (9)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/musician">musician (8)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/hector">hector (8)</a> <span class="bookmark">★</span></li>
+                <li><a href="https://palp.art/browse/polyphemus">polyphemus (8)</a>
+
+                    <section id="animals">
+                        <h2>Animals</h2>
+                        <ul class="item-list">
+                            <!-- List items for Animals category -->
+                            <li><a href="https://palp.art/browse/serpent">serpent (30)</a></li>
+                            <li><a href="https://palp.art/browse/antelope">antelope (24)</a></li>
+                            <li><a href="https://palp.art/browse/boar">boar (24)</a></li>
+                            <li><a href="https://palp.art/browse/pig">pig (20)</a></li>
+                            <li><a href="https://palp.art/browse/crocodile">crocodile (19)</a></li>
+                            <li><a href="https://palp.art/browse/cow">cow (18)</a></li>
+                            <li><a href="https://palp.art/browse/lamb">lamb (18)</a></li>
+                            <li><a href="https://palp.art/browse/hare">hare (17)</a></li>
+                            <li><a href="https://palp.art/browse/owl">owl (17)</a></li>
+                            <li><a href="https://palp.art/browse/ibis">ibis (16)</a></li>
+                            <li><a href="https://palp.art/browse/porphyrion_(sultan_chicken)">porphyrion_(sultan_chicken) (16)</a></li>
+                            <li><a href="https://palp.art/browse/stag">stag (15)</a></li>
+                            <li><a href="https://palp.art/browse/tiger">tiger (15)</a></li>
+                            <li><a href="https://palp.art/browse/parrot">parrot (14)</a></li>
+                            <li><a href="https://palp.art/browse/bear">bear (13)</a></li>
+                            <li><a href="https://palp.art/browse/cock">cock (12)</a></li>
+                            <li><a href="https://palp.art/browse/mermaid">mermaid (11)</a></li>
+                            <li><a href="https://palp.art/browse/sea-griffin">sea-griffin (9)</a></li>
+                            <li><a href="https://palp.art/browse/donkey">donkey (9)</a></li>
+                            <li><a href="https://palp.art/browse/eel">eel (8)</a></li>
+                            <li><a href="https://palp.art/browse/rabbit">rabbit (8)</a></li>
+                            <li><a href="https://palp.art/browse/marine_griffin">marine_griffin (8)</a></li>
+                        </ul>
+                    </section>
+            
+                    <section id="gods">
+                        <h2>Gods</h2>
+                        <ul class="item-list">
+                            <!-- List items for Gods category -->
+                            <li><a href="https://palp.art/browse/mars">mars (31)</a></li>
+                            <li><a href="https://palp.art/browse/zeus">zeus (18)</a></li>
+                            <li><a href="https://palp.art/browse/artemis">artemis (17)</a></li>
+                            <li><a href="https://palp.art/browse/diana">diana (17)</a></li>
+                            <li><a href="https://palp.art/browse/okeanos">okeanos (17)</a></li>
+                            <li><a href="https://palp.art/browse/athena">athena (15)</a></li>
+                            <li><a href="https://palp.art/browse/selene">selene (15)</a></li>
+                            <li><a href="https://palp.art/browse/eros">eros (14)</a></li>
+                            <li><aHere's the updated HTML content with the categorized items and their respective links:
+            
+            
+                            <li><a href="https://palp.art/browse/bacchante">bacchante (32)</a></li>
+                            <li><a href="https://palp.art/browse/mars">mars (31)</a></li>
+                            <li><a href="https://palp.art/browse/paris">paris (28)</a></li>
+                            <li><a href="https://palp.art/browse/perseus">perseus (28)</a></li>
+                            <li><a href="https://palp.art/browse/andromeda">andromeda (25)</a></li>
+                            <li><a href="https://palp.art/browse/achilles">achilles (22)</a></li>
+                            <li><a href="https://palp.art/browse/theseus">theseus (22)</a></li>
+                            <li><a href="https://palp.art/browse/narcissus">narcissus (19)</a></li>
+                            <li><a href="https://palp.art/browse/priapus">priapus (19)</a></li>
+                            <li><a href="https://palp.art/browse/helen">helen (17)</a></li>
+                            <li><a href="https://palp.art/browse/poet">poet (17)</a></li>
+                            <li><a href="https://palp.art/browse/soldier">soldier (17)</a></li>
+                            <li><a href="https://palp.art/browse/adonis">adonis (16)</a></li>
+                            <li><a href="https://palp.art/browse/athena">athena (15)</a></li>
+                            <li><a href="https://palp.art/browse/endymion">endymion (15)</a></li>
+                            <li><a href="https://palp.art/browse/selene">selene (15)</a></li>
+                            <li><a href="https://palp.art/browse/eros">eros (14)</a></li>
+                            <li><a href="https://palp.art/browse/erotic_scene">erotic_scene (14)</a></li>
+                            <li><a href="https://palp.art/browse/actor">actor (13)</a></li>
+                            <li><a href="https://palp.art/browse/gladiator">gladiator (12)</a></li>
+                            <li><a href="https://palp.art/browse/daedalus">daedalus (11)</a></li>
+                            <li><a href="https://palp.art/browse/marsyas">marsyas (11)</a></li>
+                            <li><a href="https://palp.art/browse/hermaphrodite">hermaphrodite (10)</a></li>
+                            <li><a href="https://palp.art/browse/amazon">amazon (9)</a></li>
+                            <li><a href="https://palp.art/browse/musician">musician (8)</a></li>
+                            <li><a href="https://palp.art/browse/hector">hector (8)</a></li>
+                            <li><a href="https://palp.art/browse/polyphemus">polyphemus (8)</a></li>
+                        </ul>
+                    </section>
